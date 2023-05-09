@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package simulation;
+
+service Frontend {
+    rpc SendRequest (Request) returns (Response) {}
+}
+
+message Request {
+    int64 id = 1;
+    int64 start_time = 2;
+}
+
+message Response {
+    int64 id = 1;
+    repeated int64 end_times = 2;
+}
